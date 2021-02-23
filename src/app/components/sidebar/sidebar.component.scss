@@ -1,0 +1,61 @@
+.toggle {
+    border: none;
+    outline:none;
+    background-color: transparent;
+}
+
+.list-items {
+    margin-top: 10px;
+}
+
+.menu-item {
+    display: flex;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+    text-align: left;
+    padding: 10px;
+}
+
+.menu-item:hover {
+    background-color: lightgray;
+}
+
+.menu-item-compress {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding: 10px;
+}
+
+.menu-item-compress:hover {
+    background-color: lightgray;
+}
+
+#sidenavContainer {
+    margin-top: 64px;
+}
+
+.icon {
+    color: white;
+    margin-right: 30px;
+}
+
+.icon-item {
+    color: #4051b5;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+span {
+    align-self: center;
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-size: 15px;
+    color: #4051b5;
+}
