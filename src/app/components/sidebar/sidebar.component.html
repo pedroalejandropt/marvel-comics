@@ -1,0 +1,37 @@
+<mat-toolbar color='primary'>
+    <button class='toggle' mat-icon-button (click)='onToolbarMenuToggle()'>
+        <mat-icon class='icon'>menu</mat-icon>
+    </button>
+    <img style='width: 200px;' src='../../../assets/marvel-logo.png'>
+</mat-toolbar>
+
+<mat-sidenav-container id="sidenavContainer" fullscreen>
+    <mat-sidenav mode='side' #sidenav id='sidenav' opened>
+        <mat-list [ngStyle]="{ 'width.px': pxMeasure }">
+            <mat-list-item class='list-items'>
+                <button *ngIf='pxMeasure == 240' class='menu-item' mat-flat-button [routerLink]='["/"]' ><mat-icon class='icon-item'>home</mat-icon><span>Home</span></button>
+                <button *ngIf='pxMeasure == 70' class="menu-item-compress" mat-flat-button [routerLink]='["/"]'><mat-icon class='icon-item'>home</mat-icon></button>
+            </mat-list-item>
+            <mat-list-item>
+                <button *ngIf='pxMeasure == 240' class='menu-item' mat-flat-button [routerLink]='["/characters"]' ><mat-icon class='icon-item'>contacts</mat-icon><span>Characters</span></button>
+                <button *ngIf='pxMeasure == 70' class="menu-item-compress" mat-flat-button [routerLink]='["/characters"]'><mat-icon class='icon-item'>contacts</mat-icon></button>
+            </mat-list-item>
+            <mat-list-item>
+                <button *ngIf='pxMeasure == 240' class='menu-item' mat-flat-button [routerLink]='["/comics"]' ><mat-icon class='icon-item'>library_books</mat-icon><span>Comics</span></button>
+                <button *ngIf='pxMeasure == 70' class="menu-item-compress" mat-flat-button [routerLink]='["/comics"]'><mat-icon class='icon-item'>library_books</mat-icon></button>
+            </mat-list-item>
+            <mat-list-item>
+                <button *ngIf='pxMeasure == 240' class='menu-item' mat-flat-button [routerLink]='["/series"]' ><mat-icon class='icon-item'>theaters</mat-icon><span>Series</span></button>
+                <button *ngIf='pxMeasure == 70' class="menu-item-compress" mat-flat-button [routerLink]='["/series"]'><mat-icon class='icon-item'>theaters</mat-icon></button>
+            </mat-list-item>
+            <mat-list-item>
+                <button *ngIf='pxMeasure == 240' class='menu-item' mat-flat-button [routerLink]='["/creators"]' ><mat-icon class='icon-item'>face</mat-icon><span>Creators</span></button>
+                <button *ngIf='pxMeasure == 70' class="menu-item-compress" mat-flat-button [routerLink]='["/creators"]'><mat-icon class='icon-item'>face</mat-icon></button>
+            </mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content [ngStyle]="{ 'margin-left.px': pxMeasure }">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
