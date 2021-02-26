@@ -1,0 +1,74 @@
+<mat-card class="big-card" style="overflow-y: scroll;">
+    <div class='close'>
+        <mat-icon (click)=close()>clear</mat-icon>
+    </div>
+    <mat-card-header>
+        <mat-card-title>
+            <img style="width: 100px; height: 100px; border-radius: 50px;"
+                src='{{record.thumbnail.path}}.{{record.thumbnail.extension}}' alt=''>
+            <span>
+                {{ record?.name }} {{ record?.fullName }} {{ record?.title }}
+            </span>
+        </mat-card-title>
+        <mat-card-subtitle>{{ (record.description) ? record?.description : 'Description Is Not Available' }}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-accordion>
+            <mat-expansion-panel *ngFor='let category of record.slider'>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{ category.name }}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <carousel cellsToShow='3' arrowsTheme='dark' [loop]="true">
+                    <div class="carousel-cell" *ngFor='let extra of category.res'>
+                        <!-- <div class="container">
+                            <p class="title">{{ extra?.name }} {{ extra?.fullName }} {{ extra?.title }}</p>
+                            <div class="content">
+                                <div class="content-overlay"></div>
+                                <img class="content-image" src="{{extra.thumbnail.path}}.{{extra.thumbnail.extension}}">
+                                <div class="content-details fadeIn-bottom"> -->
+                                    <!-- <p class="content-title">{{ extra?.name }} {{ extra?.fullName }} {{ extra?.title }}</p> -->
+                        <!--             <p class="content-text"> {{ (extra?.comics?.available) ? 'Comics: ' + extra?.comics?.available : '' }} {{ (extra?.comics?.available && extra?.series?.available) ? ' --- ' : '' }}  {{ (extra?.series?.available) ? 'Series: ' + extra?.series?.available : '' }}</p>
+                                    <p class="content-text"> {{ (extra?.creators) ? 'Writer: ' + extra?.creators?.items[0]?.name : '' }} </p>
+                                    <p class="content-text"> {{ (extra?.type) ? 'Type: ' + extra?.type : (extra?.type == '') ? 'Type: Unavailable' : '' }} </p>
+                                    <p class="content-text"> {{ (extra?.rating) ? 'Rating: ' + extra?.rating : (extra?.rating == '') ? 'Rating: Unavailable' : '' }}</p>
+                                    <p class="content-text"> {{ (extra?.prices) ? (extra?.prices?.length > 0) ? 'Price: $' + extra?.prices[0]?.price : 'Price: Unavailable' : '' }}</p>
+                                    <p class="content-text"> {{ (extra?.startYear && extra?.endYear) ? extra?.startYear + ' - ' + extra?.endYear : '' }} </p>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <mat-card class="card" style="width: 84%; height: 100%; text-align: center; box-shadow: 0 0 0 0;">
+                            <mat-card-header>
+                                <!-- style="justify-content: center; border: 1px solid lightgray; border-top-right-radius: 5px; border-top-left-radius: 5px;" -->
+                                <mat-card-title class='title-card-slider'>{{ extra?.name }} {{ extra?.fullName }} {{ extra?.title }}</mat-card-title>
+                                <!-- <mat-card-subtitle class='subtitle-card-slider'> {{ (extra?.comics?.available) ? 'Comics: ' + extra?.comics?.available : '' }} {{ (extra?.comics?.available && extra?.series?.available) ? ' --- ' : '' }}  {{ (extra?.series?.available) ? 'Series: ' + extra?.series?.available : '' }}</mat-card-subtitle>
+                                <mat-card-subtitle class='subtitle-card-slider'> {{ (extra?.creators) ? 'Writer: ' + extra?.creators?.items[0]?.name : '' }} </mat-card-subtitle>
+                                <mat-card-subtitle class='subtitle-card-slider'> {{ (extra?.type) ? 'Type: ' + extra?.type : (extra?.type == '') ? 'Type: Unavailable' : '' }} </mat-card-subtitle>
+                                <mat-card-subtitle class='subtitle-card-slider'> {{ (extra?.rating) ? 'Rating: ' + extra?.rating : (extra?.rating == '') ? 'Rating: Unavailable' : '' }}</mat-card-subtitle>
+                                <mat-card-subtitle class='subtitle-card-slider'> {{ (extra?.prices) ? (extra?.prices?.length > 0) ? 'Price: $' + extra?.prices[0]?.price : 'Price: Unavailable' : '' }}</mat-card-subtitle>
+                                <mat-card-subtitle class='subtitle-card-slider'> {{ (extra?.startYear && extra?.endYear) ? extra?.startYear + ' - ' + extra?.endYear : '' }} </mat-card-subtitle> -->
+                            </mat-card-header>
+                            <mat-card-content class="content" >
+                                <div class="content-overlay"></div>
+                                    <img class="content-image" src="{{extra.thumbnail.path}}.{{extra.thumbnail.extension}}">
+                                    <div class="content-details">
+                                        <p class="content-text"> {{ (extra?.comics?.available) ? 'Comics: ' + extra?.comics?.available : '' }} {{ (extra?.comics?.available && extra?.series?.available) ? ' --- ' : '' }}  {{ (extra?.series?.available) ? 'Series: ' + extra?.series?.available : '' }}</p>
+                                        <p class="content-text"> {{ (extra?.creators) ? 'Writer: ' + extra?.creators?.items[0]?.name : '' }} </p>
+                                        <p class="content-text"> {{ (extra?.type) ? 'Type: ' + extra?.type : (extra?.type == '') ? 'Type: Unavailable' : '' }} </p>
+                                        <p class="content-text"> {{ (extra?.rating) ? 'Rating: ' + extra?.rating : (extra?.rating == '') ? 'Rating: Unavailable' : '' }}</p>
+                                        <p class="content-text"> {{ (extra?.prices) ? (extra?.prices?.length > 0) ? 'Price: $' + extra?.prices[0]?.price : 'Price: Unavailable' : '' }}</p>
+                                        <p class="content-text"> {{ (extra?.startYear && extra?.endYear) ? extra?.startYear + ' - ' + extra?.endYear : '' }} </p>
+                                    </div>
+                                
+                            </mat-card-content>
+                            <!-- <img src='{{extra.thumbnail.path}}.{{extra.thumbnail.extension}}' style="width: 169px !important; height: 165px !important;"> -->
+                        </mat-card>
+                    </div>
+                </carousel>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card-content>
+</mat-card>
