@@ -1,0 +1,20 @@
+<mat-grid-list cols="4" rowHeight="500">
+    <mat-grid-tile *ngFor="let record of records">
+        <mat-card class="example-card">
+            <mat-card-header style="justify-content: center;">
+                <mat-card-title style="text-align: center; font-size: large;">{{ record?.name }} {{ record?.fullName }} {{ record?.title }}</mat-card-title>
+                <mat-card-subtitle> {{ (record?.creators) ? (record?.creators?.items.length > 0) ? 'Writer: ' + record?.creators?.items[0]?.name : 'Writer: Unavailable' : '' }}</mat-card-subtitle>
+                <mat-card-subtitle> {{ (record?.comics?.available != null) ? 'Comics: ' + record?.comics?.available : '' }} {{ (record?.comics?.available != null && record?.series?.available != null) ? ' --- ' : '' }}  {{ (record?.series?.available !== null) ? (record?.series?.available !== undefined) ? 'Series: ' + record?.series?.available : '' : '' }}</mat-card-subtitle>
+                <mat-card-subtitle> {{ (record?.type) ? 'Type: ' + record?.type : (record?.type == '') ? 'Type: Unavailable' : '' }} </mat-card-subtitle>
+                <mat-card-subtitle> {{ (record?.rating) ? 'Rating: ' + record?.rating : (record?.rating == '') ? 'Rating: Unavailable' : '' }}</mat-card-subtitle>
+                <mat-card-subtitle [matTooltip]="record.description"> {{ (record?.prices) ? (record?.description) ? 'Description: ' + (record?.description | slice:0:15 ) + '...' : 'Description: Unavailable' : '' }} </mat-card-subtitle>
+                <mat-card-subtitle> {{ (record?.prices) ? (record?.prices?.length > 0) ? 'Price: $' + record?.prices[0]?.price : 'Price: Unavailable' : '' }} </mat-card-subtitle>
+                <mat-card-subtitle> {{ (record?.startYear && record?.endYear) ? record?.startYear + ' - ' + record?.endYear : '' }} </mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src='{{record.thumbnail.path}}.{{record.thumbnail.extension}}' height="250px">
+            <mat-card-actions *ngIf='detail' style="text-align: center;">
+                <button mat-button color="primary" style="width: 100%;" (click)='view(record)'>Detail</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
