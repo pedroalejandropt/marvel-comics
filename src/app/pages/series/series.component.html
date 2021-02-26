@@ -26,6 +26,6 @@
 </div>
 
 
-<app-grid-records *ngIf="!serie" [records]="series" [detail]='false' (viewEvent)="viewDetail($event)"></app-grid-records>
+<app-grid-records *ngIf="!serie" [records]="series" [detail]='false'></app-grid-records>
 
 <mat-progress-spinner *ngIf='show' class="spinner" color="primary" mode="indeterminate"></mat-progress-spinner>
