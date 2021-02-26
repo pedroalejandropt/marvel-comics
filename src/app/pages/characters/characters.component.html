@@ -1,1 +1,16 @@
-<p>characters works!</p>
+<div class='search' *ngIf="!character">
+    <mat-form-field class="form-field">
+        <mat-label>Character Name</mat-label>
+        <input matInput type="text" [(ngModel)]="character_text" (ngModelChange)='filter()'>
+        <button mat-button [disabled]="!character_text" matSuffix mat-icon-button aria-label="Clear"
+            (click)="clear(); character_text='';">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+
+
+<app-grid-records *ngIf="!character" [records]="characters" [detail]='true' (viewEvent)="viewDetail($event)"></app-grid-records>
+<app-detail-record *ngIf="character" [record]="character" (closeEvent)="character=null"></app-detail-record>
+
+<mat-progress-spinner *ngIf='show' class="spinner" color="primary" mode="indeterminate"></mat-progress-spinner>
