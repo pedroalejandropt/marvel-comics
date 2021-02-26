@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class HomeService {
 
-  url = `api.marvelita.es/`
+  url = `https://api.marvelita.es/`
 
   constructor(private _http: HttpClient) { }
 
@@ -15,7 +15,12 @@ export class HomeService {
     * 
     * @returns Promise of the list of news.
   */
-  fetchNews = () => { return this._http.get(`${this.url}news/all`).toPromise() }
+  fetchNews = () => { 
+    let header: HttpHeaders = new HttpHeaders();
+    header = header.set('Content-Type', 'application/x-www-form-urlencoded');
+    header = header.append('Access-Control-Allow-Origin', '*');
+    return this._http.get(`${this.url}news/all`).toPromise() 
+  }
   
   /**
     * This function get all films.
