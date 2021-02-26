@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class HomeService {
 
-  url = `https://api.marvelita.es/`
+  url = `http://api.marvelita.es/`
 
   constructor(private _http: HttpClient) { }
 
