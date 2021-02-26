@@ -171,7 +171,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/services/home.service.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/services/home.service.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -248,7 +248,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 
 @Injectable({
@@ -265,7 +265,12 @@ export class HomeService {
     * 
     * @returns Promise of the list of news.
   */
-  fetchNews &#x3D; () &#x3D;&gt; { return this._http.get(&#x60;${this.url}news/all&#x60;).toPromise() }
+  fetchNews &#x3D; () &#x3D;&gt; { 
+    let header: HttpHeaders &#x3D; new HttpHeaders();
+    header &#x3D; header.set(&#x27;Content-Type&#x27;, &#x27;application/x-www-form-urlencoded&#x27;);
+    header &#x3D; header.append(&#x27;Access-Control-Allow-Origin&#x27;, &#x27;*&#x27;);
+    return this._http.get(&#x60;${this.url}news/all&#x60;).toPromise() 
+  }
   
   /**
     * This function get all films.

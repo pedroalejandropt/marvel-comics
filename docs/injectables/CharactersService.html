@@ -379,7 +379,7 @@ export class CharactersService {
     * 
     * @returns Promise of the list of characters.
   */
-  fetchCharacters &#x3D; ():Promise&lt;any&gt; &#x3D;&gt; { return this._http.get(&#x60;${this.url}?limit&#x3D;100&amp;${this.api}&#x60;).toPromise() }
+  fetchCharacters &#x3D; () &#x3D;&gt; { return this._http.get(&#x60;${this.url}?limit&#x3D;100&amp;${this.api}&#x60;).toPromise() }
 
   /**
     * This function get all comics by character.

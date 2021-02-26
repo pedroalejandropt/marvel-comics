@@ -24,67 +24,67 @@
 <title>cluster_ComicsModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-195 638,-195 638,-70 8,-70"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_ComicsModule_declarations</title>
-<polygon fill="none" stroke="black" points="490,-78 490,-130 630,-130 630,-78 490,-78"/>
-</g>
 <g id="clust4" class="cluster">
 <title>cluster_ComicsModule_imports</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 482,-130 482,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="164,-78 164,-130 630,-130 630,-78 164,-78"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_ComicsModule_declarations</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 156,-130 156,-78 16,-78"/>
 </g>
 <!-- ComicsComponent -->
 <g id="node1" class="node">
 <title>ComicsComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="622.11,-122 497.89,-122 497.89,-86 622.11,-86 622.11,-122"/>
-<text text-anchor="middle" x="560" y="-99.8" font-family="Times,serif" font-size="14.00">ComicsComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="148.11,-122 23.89,-122 23.89,-86 148.11,-86 148.11,-122"/>
+<text text-anchor="middle" x="86" y="-99.8" font-family="Times,serif" font-size="14.00">ComicsComponent</text>
 </g>
 <!-- ComicsModule -->
 <g id="node2" class="node">
 <title>ComicsModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="371.33,-187 368.33,-191 347.33,-191 344.33,-187 268.67,-187 268.67,-151 371.33,-151 371.33,-187"/>
-<text text-anchor="middle" x="320" y="-164.8" font-family="Times,serif" font-size="14.00">ComicsModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="364.33,-187 361.33,-191 340.33,-191 337.33,-187 261.67,-187 261.67,-151 364.33,-151 364.33,-187"/>
+<text text-anchor="middle" x="313" y="-164.8" font-family="Times,serif" font-size="14.00">ComicsModule</text>
 </g>
 <!-- ComicsComponent&#45;&gt;ComicsModule -->
 <g id="edge1" class="edge">
 <title>ComicsComponent&#45;&gt;ComicsModule</title>
-<path fill="none" stroke="black" d="M560,-122.11C560,-141.34 560,-169 560,-169 560,-169 381.19,-169 381.19,-169"/>
-<polygon fill="black" stroke="black" points="381.19,-165.5 371.19,-169 381.19,-172.5 381.19,-165.5"/>
+<path fill="none" stroke="black" d="M86,-122.11C86,-141.34 86,-169 86,-169 86,-169 251.77,-169 251.77,-169"/>
+<polygon fill="black" stroke="black" points="251.77,-172.5 261.77,-169 251.77,-165.5 251.77,-172.5"/>
 </g>
 <!-- ComicsRoutingModule -->
 <g id="node3" class="node">
 <title>ComicsRoutingModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="473.95,-122 470.95,-126 449.95,-126 446.95,-122 326.05,-122 326.05,-86 473.95,-86 473.95,-122"/>
-<text text-anchor="middle" x="400" y="-99.8" font-family="Times,serif" font-size="14.00">ComicsRoutingModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="621.95,-122 618.95,-126 597.95,-126 594.95,-122 474.05,-122 474.05,-86 621.95,-86 621.95,-122"/>
+<text text-anchor="middle" x="548" y="-99.8" font-family="Times,serif" font-size="14.00">ComicsRoutingModule</text>
 </g>
 <!-- ComicsRoutingModule&#45;&gt;ComicsModule -->
 <g id="edge2" class="edge">
 <title>ComicsRoutingModule&#45;&gt;ComicsModule</title>
-<path fill="none" stroke="black" d="M348.72,-122.11C348.72,-122.11 348.72,-140.99 348.72,-140.99"/>
-<polygon fill="black" stroke="black" points="345.22,-140.99 348.72,-150.99 352.22,-140.99 345.22,-140.99"/>
+<path fill="none" stroke="black" d="M548,-122.11C548,-141.34 548,-169 548,-169 548,-169 374.28,-169 374.28,-169"/>
+<polygon fill="black" stroke="black" points="374.28,-165.5 364.28,-169 374.28,-172.5 374.28,-165.5"/>
 </g>
 <!-- DetailRecordModule -->
 <g id="node4" class="node">
 <title>DetailRecordModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="308.18,-122 305.18,-126 284.18,-126 281.18,-122 173.82,-122 173.82,-86 308.18,-86 308.18,-122"/>
-<text text-anchor="middle" x="241" y="-99.8" font-family="Times,serif" font-size="14.00">DetailRecordModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="456.18,-122 453.18,-126 432.18,-126 429.18,-122 321.82,-122 321.82,-86 456.18,-86 456.18,-122"/>
+<text text-anchor="middle" x="389" y="-99.8" font-family="Times,serif" font-size="14.00">DetailRecordModule</text>
 </g>
 <!-- DetailRecordModule&#45;&gt;ComicsModule -->
 <g id="edge3" class="edge">
 <title>DetailRecordModule&#45;&gt;ComicsModule</title>
-<path fill="none" stroke="black" d="M288.46,-122.11C288.46,-122.11 288.46,-140.99 288.46,-140.99"/>
-<polygon fill="black" stroke="black" points="284.96,-140.99 288.46,-150.99 291.96,-140.99 284.96,-140.99"/>
+<path fill="none" stroke="black" d="M343.04,-122.11C343.04,-122.11 343.04,-140.99 343.04,-140.99"/>
+<polygon fill="black" stroke="black" points="339.54,-140.99 343.04,-150.99 346.54,-140.99 339.54,-140.99"/>
 </g>
 <!-- GridRecordsModule -->
 <g id="node5" class="node">
 <title>GridRecordsModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="155.58,-122 152.58,-126 131.58,-126 128.58,-122 24.42,-122 24.42,-86 155.58,-86 155.58,-122"/>
-<text text-anchor="middle" x="90" y="-99.8" font-family="Times,serif" font-size="14.00">GridRecordsModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="303.58,-122 300.58,-126 279.58,-126 276.58,-122 172.42,-122 172.42,-86 303.58,-86 303.58,-122"/>
+<text text-anchor="middle" x="238" y="-99.8" font-family="Times,serif" font-size="14.00">GridRecordsModule</text>
 </g>
 <!-- GridRecordsModule&#45;&gt;ComicsModule -->
 <g id="edge4" class="edge">
 <title>GridRecordsModule&#45;&gt;ComicsModule</title>
-<path fill="none" stroke="black" d="M90,-122.11C90,-141.34 90,-169 90,-169 90,-169 258.67,-169 258.67,-169"/>
-<polygon fill="black" stroke="black" points="258.67,-172.5 268.67,-169 258.67,-165.5 258.67,-172.5"/>
+<path fill="none" stroke="black" d="M282.69,-122.11C282.69,-122.11 282.69,-140.99 282.69,-140.99"/>
+<polygon fill="black" stroke="black" points="279.19,-140.99 282.69,-150.99 286.19,-140.99 279.19,-140.99"/>
 </g>
 </g>
 </svg>
