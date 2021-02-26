@@ -1,1 +1,35 @@
-<p>comics works!</p>
+<div class='search' *ngIf="!comic">
+    <mat-form-field class="form-field">
+        <mat-label>Comic Name</mat-label>
+        <input matInput type="text" [(ngModel)]="comic_text" (ngModelChange)='filter()'>
+        <button mat-button [disabled]="!comic_text" matSuffix mat-icon-button aria-label="Clear"
+            (click)="clear(); comic_text='';">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>Characters</mat-label>
+        <mat-select [formControl]="characterSelections" (ngModelChange)='filterByCharacters()' multiple>
+          <mat-option *ngFor="let character of characters" [value]="character.name">{{ character.name }}</mat-option>
+        </mat-select>
+        <button mat-button [disabled]="!this.characterSelections.value" matSuffix mat-icon-button aria-label="Clear"
+            (click)="clearCharacters();">
+            <mat-icon>close</mat-icon>
+    </button>
+    </mat-form-field>
+    
+    <button mat-button aria-label="Prices"
+        (click)="orderByTitle(); orderTitles = !orderTitles;">
+        Title ({{ (!orderTitles) ? 'A - Z' : 'Z - A' }})
+    </button>
+    <button mat-button aria-label="Prices"
+        (click)="orderByPrices(); orderPrices = !orderPrices;">
+        Prices <mat-icon style="font-size: 20px;">{{ (orderPrices) ? 'arrow_downward' : 'arrow_upward' }}</mat-icon>
+    </button>
+</div>
+
+
+<app-grid-records *ngIf="!comic" [records]="comics" detail='true' (viewEvent)="viewDetail($event)"></app-grid-records>
+<app-detail-record *ngIf="comic" [record]="comic" (closeEvent)="comic=null"></app-detail-record>
+
+<mat-progress-spinner *ngIf='show' class="spinner" color="primary" mode="indeterminate"></mat-progress-spinner>
