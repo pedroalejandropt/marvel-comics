@@ -1,1 +1,34 @@
-<p>home works!</p>
+<carousel *ngIf='showFilms && showNews' class='news' cellWidth='300' height='450' cellsToShow='2' loop='true' arrowsTheme='dark'>
+    <div class="carousel-cell" *ngFor='let new of news' >
+        <mat-card class="card">
+            <mat-card-header>
+                <img class="new-img" src='{{new.img}}' (error)='notFound(new)'>
+            </mat-card-header>
+            <mat-card-content>
+                <h1 class='new-title'>{{ new.title }}</h1>
+                <button mat-raised-button color="accent" *ngIf="new.type == 'Rumores' || new.type == 'Curiosidades'">{{ new.type }}</button>
+                <button mat-raised-button color="primary" *ngIf="new.type == 'Series' || new.type == 'Películas'">{{ new.type }}</button>
+                <button mat-raised-button *ngIf="new.type !== 'Series' && new.type !== 'Películas' && new.type !== 'Rumores' && new.type !== 'Curiosidades'">{{ new.type }}</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</carousel>
+
+<div *ngIf='showFilms && showNews'>
+    <h1 class='film-header'>Releases</h1>
+    <carousel class='films' cellsToShow='4' height='200' loop='true' arrowsTheme='dark'>
+        <div class="carousel-cell" *ngFor='let film of films' >
+            <mat-card class="card">
+                <mat-card-header>
+                    <img class="film-img" src='{{film.img}}'>
+                </mat-card-header>
+                <mat-card-content style="text-align: center;">
+                    <h1 class='film-title'>{{ film.name }}</h1>
+                    <button mat-raised-button disabled>{{ film.date | date: 'dd/MM/yyyy'}}</button>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </carousel>
+</div>
+
+<mat-progress-spinner *ngIf='!showFilms && !showNews' class="spinner" color="primary" mode="indeterminate"></mat-progress-spinner>

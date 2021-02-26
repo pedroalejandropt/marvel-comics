@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Raleway:wght@100&display=swap');
+
+.new-img {
+    width: 485px !important;
+    height: 284px !important;
+}
+
+.new-title {
+    height: 80px !important;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.film-header {
+    text-indent: 10px; 
+    text-transform: uppercase; 
+    font-family: 'Raleway', sans-serif;
+}
+
+.film-img {
+    width: 200px !important;
+    height: 100px !important;
+}
+
+.film-title {
+    font-size: 15px !important;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.spinner {
+    width: 60%;
+    position: fixed;
+    top: 54%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+}
