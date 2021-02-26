@@ -1,1 +1,31 @@
-<p>series works!</p>
+<div class='search' *ngIf="!serie">
+    <mat-form-field class="form-field">
+        <mat-label>Serie Name</mat-label>
+        <input matInput type="text" [(ngModel)]="serie_text" (ngModelChange)='filterSeries()'>
+        <button mat-button [disabled]="!serie_text" matSuffix mat-icon-button aria-label="Clear"
+            (click)="clear(); serie_text='';">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Serie Type</mat-label>
+        <mat-select [(ngModel)]="type" (ngModelChange)='filterSeries()'>
+            <mat-option *ngFor="let type of types" [value]="type.value">
+                {{ type.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Serie Rating</mat-label>
+        <mat-select [(ngModel)]="rate" (ngModelChange)='filterSeries()'>
+            <mat-option *ngFor="let rate of ratings" [value]="rate.value">
+                {{ rate.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+
+<app-grid-records *ngIf="!serie" [records]="series" [detail]='false' (viewEvent)="viewDetail($event)"></app-grid-records>
+
+<mat-progress-spinner *ngIf='show' class="spinner" color="primary" mode="indeterminate"></mat-progress-spinner>
